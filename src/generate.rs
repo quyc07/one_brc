@@ -32,7 +32,7 @@ pub(crate) fn generate_data(){
 
     let mut rng = rand::thread_rng();
 
-    for _ in 0..1_000_000_000 {
+    for _ in 0..1_000 {
         if let Some((&city, &value)) = CITY.iter().choose(&mut rng) {
             let temperature = rng.gen_range(value - 10.0..value + 10.0);
             let msg = format!("{city};{:.2}\n",temperature);
