@@ -40,7 +40,7 @@ pub(crate) fn calc() -> io::Result<()> {
                 .and_modify(|city_agg| {
                     city_agg.min = f32::min(city_agg.min, city_data.temperature);
                     city_agg.max = f32::max(city_agg.max, city_data.temperature);
-                    city_agg.sum = city_agg.min + city_data.temperature;
+                    city_agg.sum = city_agg.sum + city_data.temperature;
                     city_agg.count = city_agg.count + 1;
                 })
                 .or_insert(CityAgg {
